@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Danger Locations</title>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+
+    function initMap() {
+        var locations = [
+
+            ['  I-77', 35.254941, -80.843068, 5],
+            ['2300 South Blvd', 35.205303, -80.862810, 3],
+            ['1900 W Morehead St',35.228012,-80.8740307, 2],
+            ['1100-1116 West Blvd', 35.217758, -80.874153, 6],
+            ['727 W Trade St',35.232543, -80.849326, 7],
+            ['NC-16',35.258187, -80.871415, 8],
+            ['2700-2728 Monroe Rd', 35.204416, -80.808020, 4],
+            ['North Tyron', 35.244138, -80.8212466, 1]
+        ];
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 13,
+            center: new google.maps.LatLng(35.2271,-80.8431),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+        var contentString = '<div id="content" onclick="info.html">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<a id="firstHeading" class="firstHeading"><h3><a href="info.html" style="text-decoration: none"> Traffic Information</a></h3>'+
+            '<div id="bodyContent">'+
+            '<p>Weather - Rainy</br>Vehicles- 176</br>No traffic control </br>Accident Prone - Yes</p>'+
+            '</div>';
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map
+
+            });
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
+            });
+
+
+        }
+    }
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ7IhRTnrGh4U6EMTroyIMQ-cvqZM1nys&callback=initMap">
+</script>
+</body>
+</html>

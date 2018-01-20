@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">'<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <title>Title</title>
+</head>
+<style>
+    .image{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        z-index: -1;
+        opacity: 0.5;
+    }
+
+
+
+    .circle-ripple {
+        background-color: #ff0e09;
+        width: 1em;
+        height: 1em;
+        border-radius: 100%;
+        animation: ripple 0.7s linear infinite;
+    }
+
+    @keyframes ripple {
+        0% {
+            box-shadow: 0 0 0 0 rgba(255,0,0,0);
+            0 0 0 1em rgba(255,0,0, 0.3),
+            0 0 0 3em rgba(255,0,0, 0.3),
+            0 0 0 5em rgba(255,0,0, 0.3);
+        }
+        100% {
+            box-shadow: 0 0 0 1em rgba(255,0,0, 0.3),
+            0 0 0 3em rgba(255,0,0, 0.3),
+            0 0 0 5em rgba(255,0,0, 0.3),
+            0 0 0 8em rgba(255,0,0, 0);
+        }
+    }
+
+</style>
+<body>
+
+<div class="circle-ripple" style="margin-left:550px;margin-top: 200px"></div>
+<div class="container">
+<div style=" position:absolute;margin-top:75px;margin-left: 250px;font-family: 'Bree Serif', serif;"  class="alert alert-info">
+Based on historical data,
+The following conditions make this area accident prone.
+<ol>
+    <li>No Traffic Control</li>
+    <li>Rainy Weather</li>
+    <li>Smooth Asphalt</li>
+</ol>
+
+    <h3>Actions to be Taken: </h3>
+<ol>
+    <li>Alert Mcklenburg County Police in this area.</li>
+    <li> Send Emergency alerts.</li>
+    <li> Add Traffic Signs </li>
+</ol>
+    <a target="_blank" href="https://public.tableau.com/profile/vikas6326#!/vizhome/Book1_17834/Dashboard1">Explore the data</a>
+</div>
+</div>
+<img class="image" src="ntyron.JPG" atl="Charlotte" />
+</body>
+</html>
